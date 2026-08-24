@@ -6,3 +6,4 @@ PACK = pack
 
 # Toolchain.
 ARCH = $$(uname -m)
+GZ = gzip
