@@ -8,6 +8,7 @@ all:
 	mkdir -p $(ROOT)
 
 	ARCH=$(ARCH) \
+	MAKE=$(MAKE) \
 	$(PACK) -s . -p $(ROOT) -i $(PACKAGES)
 
 clean:
