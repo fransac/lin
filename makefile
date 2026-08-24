@@ -5,6 +5,7 @@ PACKAGES =
 .PHONY: all clean
 
 all:
+	ARCH=$(ARCH) \
 	$(PACK) -s . -p $(ROOT) -i $(PACKAGES)
 
 clean:
