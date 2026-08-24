@@ -10,9 +10,13 @@ Requirements
 
 The build machine must be a POSIX system with the following utilities:
 
+- GCC cross toolchain
 - Gzip decompressor
-- pack
+- Lex
+- Libelf
+- Pack
 - POSIX make
+- Yacc
 
 Installation
 ------------

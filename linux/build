@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+
+"$GZ" -cd linux*.tar.gz | tar -x
+cd linux*/
+
+flags="ARCH=$ARCH CC=$CC LEX=$LEX YACC=$YACC"
+
+"$MAKE" $flags defconfig
+./scripts/config --disable MODULES
+
+"$MAKE" $flags
+
+mkdir -p "$PREFIX/boot"
+cp -Lf $(find arch -name 'zImage' \
+                -o -name 'bzImage' \
+                -o -name 'Image.gz' \
+                -o -name 'uImage' \
+                -o -name 'vmlinux.bin' | head -n 1) "$PREFIX/boot/linux"
