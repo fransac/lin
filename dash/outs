@@ -1,0 +1,4 @@
+#no-chroot
+
+/bin/dash
+/bin/sh

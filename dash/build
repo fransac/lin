@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+
+"$GZ" -cd dash*.tar.gz | tar -x
+cd dash*/
+
+./configure --enable-static \
+            --host="$ARCH-linux-musl" \
+            --prefix=/
+make
+
+make DESTDIR="$PREFIX" install
+ln -s dash "$PREFIX/bin/sh"

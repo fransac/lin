@@ -1,6 +1,6 @@
 include config.mk
 
-PACKAGES = linux
+PACKAGES = dash linux
 
 .PHONY: all clean
 
