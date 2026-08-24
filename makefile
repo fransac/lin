@@ -5,6 +5,8 @@ PACKAGES =
 .PHONY: all clean
 
 all:
+	mkdir -p $(ROOT)
+
 	ARCH=$(ARCH) \
 	$(PACK) -s . -p $(ROOT) -i $(PACKAGES)
 
