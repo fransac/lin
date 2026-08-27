@@ -1,3 +1,18 @@
 #no-chroot
 
 /boot/linux
+
+/include/asm
+/include/asm-generic
+/include/cxl
+/include/drm
+/include/fwctl
+/include/linux
+/include/misc
+/include/mtd
+/include/rdma
+/include/regulator
+/include/scsi
+/include/sound
+/include/video
+/include/xen

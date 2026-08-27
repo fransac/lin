@@ -4,7 +4,15 @@ set -eu
 "$GZ" -cd linux*.tar.gz | tar -x
 cd linux*/
 
-flags="ARCH=$ARCH CC=$CC LEX=$LEX YACC=$YACC"
+flags="ARCH=$ARCH CROSS_COMPILE=$ARCH-linux-musl- LEX=$LEX YACC=$YACC"
+
+"$MAKE" $flags headers
+
+for f in $(cd usr && find include -name '*.h' -type f)
+do
+	mkdir -p "$PREFIX/${f%/*}"
+	cp -f "usr/$f" "$PREFIX/$f"
+done
 
 "$MAKE" $flags defconfig
 ./scripts/config --disable MODULES
