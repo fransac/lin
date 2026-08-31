@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+"$GZ" -cd sbase*.tar.gz | tar -x
+cd sbase*/
+
+make AR="$ARCH-linux-musl-ar" CC="$CC" RANLIB="$ARCH-linux-musl-ranlib"
+
+make DESTDIR="$PREFIX" PREFIX=/ install

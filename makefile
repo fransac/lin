@@ -1,6 +1,6 @@
 include config.mk
 
-PACKAGES = dash linux
+PACKAGES = dash linux sbase
 
 .PHONY: all clean
 
